@@ -7,20 +7,14 @@ int main() {
 	b.ram[0xFFFC] = 0x00;
 	b.ram[0xFFFD] = 0x80;
 
-	b.ram[0x8000] = 0xa9;
-	b.ram[0x8001] = 0x12;
-	b.ram[0x8002] = 0xea;
+	b.ram[0x8000] = 0x12;
+	b.ram[0x0087] = 0x42;
 
 	b.cpu.reset();
 
-
-	while (b.cpu.pc < 0x8003) {
-		if (b.cpu.clock()) {
-			printf("Reading 0x%x from 0x%x\n", b.read(b.cpu.pc), b.cpu.pc);
-			printf("OPCODE: 0x%x\n", b.cpu.opcode);
-			printf("A Register: 0x%x\n", b.cpu.a);
-		}
-	}
+	b.cpu.y = 0x75;
+	b.cpu.MODE_INDY();
+	printf("%x\n", b.cpu.addr_mode_bytes);
 
 	return 0;
 }

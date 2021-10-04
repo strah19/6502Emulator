@@ -4,24 +4,6 @@
 
 Sixty502::Sixty502() {
 	using s = Sixty502;
-	lookup = {
-{ "BRK", &s::IMP, &s::BRK, 7 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BPL", &s::REL, &s::BPL, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "JSR", &s::ABS, &s::JSR, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BMI", &s::REL, &s::BMI, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "RTI", &s::IMP, &s::RTI, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BVC", &s::REL, &s::BVC, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "RTS", &s::IMP, &s::RTS, 5 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BVS", &s::REL, &s::BVS, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BCC", &s::REL, &s::BCC, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "LDY", &s::IMM, &s::LDY, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "LDA", &s::ZP, &s::LDA,  3 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "LDA", &s::IMM, &s::LDA, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BCS", &s::REL, &s::BCS, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "LDA", &s::ZPX, &s::LDA, 4 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "LDA", &s::ABY, &s::LDA, 4 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "CPY", &s::IMM, &s::CPY, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BNE", &s::REL, &s::BNE, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "CPX", &s::IMM, &s::CPX, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "NOP", &s::IMP, &s::NOP, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-{ "BEQ", &s::REL, &s::BEQ, 2 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 }, { "???", &s::IMM, &s::ILL, 6 },
-};
 }
 
 void Sixty502::write(uint16_t address, uint8_t data){
@@ -34,11 +16,11 @@ bool Sixty502::clock() {
 	if (cycles == 0) {
 		opcode = read(pc++);
 		set_flag(FLAGS6502::U, true);
-		cycles = lookup[opcode].cycles;
-		printf("%s\n", lookup[opcode].name.c_str());
+		cycles = instructions[opcode].cycles;
+		printf("%s\n", instructions[opcode].name.c_str());
 
-		uint8_t additional_cycle1 = (this->*lookup[opcode].address_mode)();
-		uint8_t additional_cycle2 = (this->*lookup[opcode].opcode)();
+		uint8_t additional_cycle1 = (this->*instructions[opcode].address_mode)();
+		uint8_t additional_cycle2 = (this->*instructions[opcode].opcode)();
 
 		cycles += (additional_cycle1 & additional_cycle2);
 
@@ -64,17 +46,10 @@ void Sixty502::reset() {
 	a = 0x00;
 	f = 0x00 | U;
 
-	addr_abs = 0x00;
-	addr_rel = 0x00;
-	fetched = 0x00;
+	addr_mode_bytes = 0x00;
 
 	clock_count = 0;
 	cycles += 8;
-}
-
-void Sixty502::fetch() {
-	if (!(lookup[opcode].address_mode == &Sixty502::IMP))
-		fetched = read(addr_abs);
 }
 
 uint8_t Sixty502::read(uint16_t address) {
@@ -92,405 +67,159 @@ uint8_t Sixty502::get_flag(Sixty502::FLAGS6502 flag) {
 	return (((f & flag) > 0) ? 1 : 0);
 }
 
-uint8_t Sixty502::IMP() {
-	fetched = a;
-	return 0x00;
+// 6502 ADDRESSING MODES!
+
+/**
+* Accumulator:
+* No extra data is needed, the instruction works off the a register.
+*/
+uint8_t Sixty502::MODE_ACC() {
+	return 0;
 }
 
-uint8_t Sixty502::IMM() {
-	addr_abs = pc++;
-	return 0x00;
+/**
+* Absoulte:
+* The next two bytes are a 16 bit address that could be used by the instruction. 6502 is little endian
+* so the first byte is the low and the second is the high.
+*/
+uint8_t Sixty502::MODE_ABS() {
+	uint16_t low = read(pc++);
+	uint16_t high = read(pc++);
+
+	addr_mode_bytes = (high << 8) | low;
+
+	return 0;
 }
 
-uint8_t Sixty502::ZP() {
-	addr_abs = read(pc++);
-	addr_abs &= 0x00FF;
-	return 0x00;
-}
+/**
+* Absoulte X:
+* Same as Absoulte from above but it also will add the x register to the 16 bit address read in.
+*/
+uint8_t Sixty502::MODE_ABSX() {
+	uint16_t low = read(pc++);
+	uint16_t high = read(pc++);
 
-uint8_t Sixty502::ZPX() {
-	addr_abs = read(pc + x);
-	pc++;
-	addr_abs &= 0x00FF;
-	return 0x00;
-}
+	addr_mode_bytes = ((high << 8) | low) + x;
 
-uint8_t Sixty502::ZPY() {
-	addr_abs = read(pc + y);
-	pc++;
-	addr_abs &= 0x00FF;
-	return 0x00;
-}
-
-uint8_t Sixty502::REL() {
-	addr_rel = read(pc);
-	pc++;
-
-	if (addr_rel & 0x80)
-		addr_rel |= 0xFF00;
-
-	return 0x00;
-}
-
-uint8_t Sixty502::ABS() {
-	uint16_t lo = read(pc);
-	pc++;
-	uint16_t hi = read(pc);
-	pc++;
-
-	addr_abs = (hi << 8) | lo;
-
-	return 0x00;
-}
-
-uint8_t Sixty502::ABX() {
-	uint16_t lo = read(pc);
-	pc++;
-	uint16_t hi = read(pc);
-	pc++;
-
-	addr_abs = (hi << 8) | lo;
-	addr_abs += x;
-
-	if ((addr_abs & 0xFF00) != (hi << 8))	//If the page is crossed it takes 1 extra cycle
-		return 0x01;
-	else
-		return 0x00;
-}
-
-uint8_t Sixty502::ABY() {
-	uint16_t lo = read(pc);
-	pc++;
-	uint16_t hi = read(pc);
-	pc++;
-
-	addr_abs = (hi << 8) | lo;
-	addr_abs += y;
-
-	if ((addr_abs & 0xFF00) != (hi << 8))
-		return 0x01;
-	else
-		return 0x00;
-}
-
-uint8_t Sixty502::IND() {
-	uint16_t lo = read(pc);
-	pc++;
-	uint16_t hi = read(pc);
-	pc++;
-
-	uint16_t ptr = (hi << 8) | lo;
-
-	if (lo == 0x00FF)
-		addr_abs = (read(ptr & 0xFF00) << 8) | read(ptr + 0);
-	else
-		addr_abs = (read(ptr + 1) << 8) | read(ptr + 0);
-
-	return 0x00;
-}
-
-uint8_t Sixty502::INX() {
-	uint16_t t = read(pc);
-	pc++;
-
-	uint16_t lo = read((uint16_t)(t + (uint16_t)x) & 0x00FF);
-	uint16_t hi = read((uint16_t)(t + (uint16_t)x + 1) & 0x00FF);
-
-	addr_abs = (hi << 8) | lo;
-
-	return 0x00;
-}
-
-uint8_t Sixty502::CLD()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CLI()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CLV()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CMP()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CPX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CPY()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::DEC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::DEX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::DEY()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::EOR()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::INC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::INY() {
-	uint16_t t = read(pc);
-	pc++;
-
-	uint16_t lo = read(t & 0x00FF);
-	uint16_t hi = read((t + 1) & 0x00FF);
-
-	addr_abs = (hi << 8) | lo;
-	addr_abs += y;
-
-	if ((addr_abs & 0xFF00) != (hi << 8))
+	if ((addr_mode_bytes & 0xFF00) != (high << 8))	//This means that adding the x register resulted in a carry (crossing page boundries) and requires an extra clock cycle.
 		return 1;
-	else
-		return 0;
-}
-
-uint8_t Sixty502::JMP()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::NOP() {
 	return 0;
 }
 
-uint8_t Sixty502::LDA() {
-	fetch();
-	a = fetched;
+/**
+* Absoulte Y:
+* Same as Absoulte X but works with the y register.
+*/
+uint8_t Sixty502::MODE_ABSY() {
+	uint16_t low = read(pc++);
+	uint16_t high = read(pc++);
 
-	set_flag(Sixty502::Z, a == 0);
-	set_flag(Sixty502::N, a & 0x80);
+	addr_mode_bytes = ((high << 8) | low) + y;
+
+	if ((addr_mode_bytes & 0xFF00) != (high << 8))	//This means that adding the y register resulted in a carry (crossing page boundries) and requires an extra clock cycle.
+		return 1;
+	return 0;
+}
+
+/**
+* Immediate:
+* The instruction needs the following byte.
+*/
+uint8_t Sixty502::MODE_IMM() {
+	addr_mode_bytes = read(pc++);
+	return 0;
+}
+
+/**
+* Implied:
+* The instruction requires no extra data because the instruction 'implies' what it will do.
+*/
+uint8_t Sixty502::MODE_IMP() {
+	return 0;
+}
+
+/**
+* Indirect:
+* Only the JMP instruction uses this address mode. It takes the 2nd and 3rd bytes of the instruction
+* and forms a pointer. 
+*/
+uint8_t Sixty502::MODE_IND() {
+	uint16_t low = read(pc++);
+	uint16_t high = read(pc++);
+
+	uint16_t ptr = (high << 8) | low;
+	addr_mode_bytes = (read(ptr + 1) << 8) | read(ptr);	//Reading from the specified ptr to get the actual address.
 
 	return 0;
 }
 
+/**
+* Indirect X:
+* Reads the 2nd byte of the instruction then adds the x register to it and goes to the zero page to read the real
+* address. The ptr points to the low bytes and the next address points to the high bytes.
+*/
+uint8_t Sixty502::MODE_INDX() {
+	uint8_t ptr = read(pc++) + x;
+	addr_mode_bytes = (read(ptr + 1) << 8) | read(ptr);
+
+	return 0;
+}
+
+/**
+* Indirect Y:
+* Same as Indirect X but with te y register.
+*/
+uint8_t Sixty502::MODE_INDY() {
+	uint8_t ptr = read(pc++) + y;
+	addr_mode_bytes = (read(ptr + 1) << 8) | read(ptr);
+
+	return 0;
+}
+
+/**
+* Relative:
+* Used with branch instructions. Takes the 2nd byte of the instruction and adds the pc to get the address.
+* This has to be a signed byte so (-128 to +127).
+*/
+uint8_t Sixty502::MODE_REL() {
+	addr_mode_bytes = read(pc++);
+	addr_mode_bytes = pc + addr_mode_bytes;
+	return 0;
+}
+
+/**
+* Zero Page:
+* It read the 2nd byte and gets the address from the zero page.
+*/
+uint8_t Sixty502::MODE_ZP() {
+	addr_mode_bytes = read(pc++);
+	addr_mode_bytes &= 0x00FF;
+	return 0;
+}
+
+/**
+* Zero Page X:
+* It read the 2nd byte but also adds the x register and gets the address from the zero page.
+*/
+uint8_t Sixty502::MODE_ZPX() {
+	addr_mode_bytes = read(pc++) + x;
+	addr_mode_bytes &= 0x00FF;
+	return 0;
+}
+
+/**
+* Zero Page Y:
+* Same as Zero Page X but with the y register.
+*/
+uint8_t Sixty502::MODE_ZPY() {
+	addr_mode_bytes = read(pc++) + y;
+	addr_mode_bytes &= 0x00FF;
+	return 0;
+}
+
+/**
+* There is no instruction for the specified opcode.
+*/
 uint8_t Sixty502::ILL() {
 	return 0;
-}
-
-uint8_t Sixty502::ADC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::AND()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::ASL()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BCC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BCS()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BEQ()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BIT()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BMI()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BNE()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BPL()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BRK()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BVC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::BVS()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::CLC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::JSR()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::LDX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::LDY()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::LSR()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::ORA()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::PHA()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::PHP()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::PLA()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::PLP()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::ROL()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::ROR()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::RTI()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::RTS()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::SBC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::SEC()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::SED()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::SEI()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::STA()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::STX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::STY()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TAX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TAY()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TSX()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TXA()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TXS()
-{
-	return uint8_t();
-}
-
-uint8_t Sixty502::TYA()
-{
-	return uint8_t();
 }

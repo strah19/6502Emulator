@@ -15,8 +15,7 @@ public:
 	uint8_t x = 0x00;
 	uint8_t y = 0x00;
 	uint16_t pc = 0x00;
-	uint8_t f = 0x00;
-	uint8_t sp = 0x00;
+	uint8_t status = 0x00;
 
 	void connect_bus(Bus* bus) { this->bus = bus; }
 	bool clock();
@@ -39,7 +38,10 @@ public:
 
 	void set_flag(FLAGS6502 flag, bool status);
 	uint8_t get_flag(FLAGS6502 flag);
+	uint8_t fetch();
+	bool check_page_crossing(uint16_t address, uint16_t off);
 
+	//Address modes
 	uint8_t MODE_ACC();
 	uint8_t MODE_ABS();
 	uint8_t MODE_ABSX();
@@ -54,7 +56,12 @@ public:
 	uint8_t MODE_ZPX();
 	uint8_t MODE_ZPY();
 
+	//Illegal instruction
 	uint8_t ILL();
+
+	//Instructions
+	uint8_t BRK();	uint8_t ORA();
+	uint8_t BPL();
 
 	struct Instruction {
 		std::string name;
@@ -69,7 +76,10 @@ public:
 
 	Bus* bus = nullptr;
 
-	uint16_t addr_mode_bytes = 0x0000;
+	uint8_t fetched_data = 0x00;
+	uint16_t addr_abs = 0x0000;
+
+	uint8_t stkptr = 0x00;
 	uint32_t clock_count = 0;
 	uint8_t  opcode = 0x00;
 	uint8_t  cycles = 0;

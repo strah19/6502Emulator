@@ -14,7 +14,7 @@ int main() {
 
 	b.cpu.y = 0x75;
 	b.cpu.MODE_INDY();
-	printf("%x\n", b.cpu.addr_mode_bytes);
+	printf("%x\n", b.cpu.addr_abs);
 
 	return 0;
 }

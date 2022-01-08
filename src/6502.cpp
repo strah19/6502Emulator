@@ -1,5 +1,5 @@
-#include "6502.h"
-#include "bus.h"
+#include "../include/6502.h"
+#include "../include/bus.h"
 #include <stdio.h>
 
 using s = Sixty502;

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "bus.h"
+#include "../include/bus.h"
 
 int main() {
 	Bus b;

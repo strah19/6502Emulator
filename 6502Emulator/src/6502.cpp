@@ -5,15 +5,31 @@
 using s = Sixty502;
 
 Sixty502::Sixty502() {
-	instructions =  {
-		{ "BRK", &s::MODE_IMP, &s::BRK, 7 }, { "ORA", &s::MODE_INDX, &s::ORA, 6 }
+	instructions = {
+		/*					0										1								2									3										4									5									6									7											8								9								A										B									C									D										E									F																																																																																																																																																	*/
+/* 0 */ { "BRK", &s::MODE_IMP, &s::BRK, 7 }, { "ORA", &s::MODE_INDX, &s::ORA, 6 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 1 */ { "BPL", &s::MODE_REL, &s::BPL, 2 }, { "ORA", &s::MODE_INDY, &s::ORA, 5 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 2 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 3 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 4 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 5 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 6 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 7 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 8 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* 9 */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* A */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "LDA", &s::MODE_ZP, &s::LDA, 3 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "LDA", &s::MODE_IMM, &s::LDA, 2 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* B */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* C */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* D */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* E */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
+/* F */ { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 }, { "ILL", &s::MODE_IMP, &s::ILL, 7 },
 	};
 }
 
 /**
 * Writes data to the bus.
 */
-void Sixty502::write(uint16_t address, uint8_t data){
+void Sixty502::write(uint16_t address, uint8_t data) {
 	bus->write(address, data);
 }
 
@@ -27,7 +43,6 @@ bool Sixty502::clock() {
 		opcode = read(pc++);
 		set_flag(FLAGS6502::U, true);
 		cycles = instructions[opcode].cycles;
-		printf("%s\n", instructions[opcode].name.c_str());
 
 		uint8_t additional_cycle1 = (this->*instructions[opcode].address_mode)();
 		uint8_t additional_cycle2 = (this->*instructions[opcode].opcode)();
@@ -49,6 +64,11 @@ uint8_t Sixty502::fetch() {
 	if (!(instructions[opcode].address_mode == &s::MODE_IMP) || !(instructions[opcode].address_mode == &s::MODE_ACC))
 		fetched_data = read(addr_abs);
 	return fetched_data;
+}
+
+void Sixty502::update_z_and_n_flag(uint8_t check) {
+	set_flag(FLAGS6502::N, check & 0x80);
+	set_flag(FLAGS6502::Z, check == 0x00);
 }
 
 /**
@@ -82,8 +102,8 @@ uint8_t Sixty502::read(uint16_t address) {
 /**
 * Sets flag from the status register.
 */
-void Sixty502::set_flag(Sixty502::FLAGS6502 flag, bool status) {
-	if (status) 
+void Sixty502::set_flag(Sixty502::FLAGS6502 flag, bool s) {
+	if (s)
 		status |= flag;
 	else
 		status &= ~flag;
@@ -162,7 +182,7 @@ uint8_t Sixty502::MODE_ABSY() {
 * The instruction needs the following byte.
 */
 uint8_t Sixty502::MODE_IMM() {
-	addr_abs = read(pc++);
+	addr_abs = pc++;
 	return 0;
 }
 
@@ -178,7 +198,7 @@ uint8_t Sixty502::MODE_IMP() {
 /**
 * Indirect:
 * Only the JMP instruction uses this address mode. It takes the 2nd and 3rd bytes of the instruction
-* and forms a pointer. 
+* and forms a pointer.
 */
 uint8_t Sixty502::MODE_IND() {
 	uint16_t low = read(pc++);
@@ -193,7 +213,7 @@ uint8_t Sixty502::MODE_IND() {
 /**
 * Indirect X:
 * Reads the 2nd byte of the instruction then adds the x register to it and goes to the zero page to read the real
-* address. The ptr points to the low bytes and the next address points to the high bytes. There is no need to check for page 
+* address. The ptr points to the low bytes and the next address points to the high bytes. There is no need to check for page
 * crossing because the ptr wraps within the 0 page.
 */
 uint8_t Sixty502::MODE_INDX() {
@@ -205,7 +225,7 @@ uint8_t Sixty502::MODE_INDX() {
 
 /**
 * Indirect Y:
-* Same as Indirect X but with te y register.
+* Same as Indirect X but with the y register.
 */
 uint8_t Sixty502::MODE_INDY() {
 	uint8_t ptr = read(pc++) + y;
@@ -266,9 +286,10 @@ uint8_t Sixty502::ILL() {
 //6502 INSTRUCTIONS!
 
 /**
-* BRK - Force Break
-* Initiates a software interrupt similar to an IRQ. 
-*/
+ * @brief
+ *
+ * @return uint8_t
+ */
 uint8_t Sixty502::BRK() {
 	pc++;
 
@@ -285,30 +306,31 @@ uint8_t Sixty502::BRK() {
 	stkptr--;
 	set_flag(FLAGS6502::B, false);
 
-	pc = (uint16_t)read(0xFFFE) | ((uint16_t)read(0xFFFF) << 8);	//Go to interrupt (NMI)
+	pc = (uint16_t)read(NMI_LOW) | ((uint16_t)read(NMI_HIGH) << 8);	//Go to interrupt (NMI)
 	return 0;
 }
 
 /**
-* ORA - OR memory
-* Or's the contents in the a register.
-*/
+ * @brief
+ *
+ * @return uint8_t
+ */
 uint8_t Sixty502::ORA() {
 	a |= fetch();
-
-	set_flag(FLAGS6502::Z, a == 0x00);
-	set_flag(FLAGS6502::N, a == 0x80);
+	update_z_and_n_flag(a);
 	return 1;
 }
 
 /**
-* BPL - Branch on Result Plus
-*/
+ * @brief
+ *
+ * @return uint8_t
+ */
 uint8_t Sixty502::BPL() {
 	uint8_t extra_cycles = 0;
 	if (get_flag(FLAGS6502::N) == 0) {
 		extra_cycles++;
-	
+
 		uint16_t new_addr = pc + addr_abs;
 
 		if ((new_addr & 0xFF00) != (pc & 0xFF00))
@@ -319,4 +341,184 @@ uint8_t Sixty502::BPL() {
 
 
 	return extra_cycles;
+}
+
+/**
+ * @brief LDA - LoaD Accumulator
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::LDA() {
+	a = fetch();
+	update_z_and_n_flag(a);
+	return 0;
+}
+
+/**
+ * @brief STA - STore Accumulator
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::STA() {
+	write(addr_abs, a);
+	return 0;
+}
+
+/**
+ * @brief AND - A AND M -> A
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::AND() {
+	a &= fetch();
+	update_z_and_n_flag(a);
+	return 0;
+}
+
+/**
+ * @brief STX - STore X register into memory
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::STX() {
+	write(addr_abs, x);
+	return 0;
+}
+
+/**
+ * @brief STY - STore Y register into memory
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::STY() {
+	write(addr_abs, y);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::TAX() {
+	x = a;
+	update_z_and_n_flag(x);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::TXA() {
+	a = x;
+	update_z_and_n_flag(a);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::DEX() {
+	x = x - 1;
+	update_z_and_n_flag(x);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::INX() {
+	x = x + 1;
+	update_z_and_n_flag(x);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::TAY() {
+	y = a;
+	update_z_and_n_flag(y);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::TYA() {
+	a = y;
+	update_z_and_n_flag(a);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::DEY() {
+	y = y - 1;
+	update_z_and_n_flag(y);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::INY() {
+	y = y + 1;
+	update_z_and_n_flag(y);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::ROL() {
+	fetch();
+	uint8_t bit7 = (fetched_data & 0x80) >> 7;
+	uint8_t carry = get_flag(FLAGS6502::C) & 0x01;
+	set_flag(FLAGS6502::C, bit7);
+	uint8_t temp = fetched_data << 1;
+	temp |= carry;
+
+	update_z_and_n_flag(temp);
+
+	if ((instructions[opcode].address_mode == &s::MODE_IMP) || (instructions[opcode].address_mode == &s::MODE_ACC))
+		a = temp;
+	else
+		write(addr_abs, temp);
+	return 0;
+}
+
+/**
+ * @brief
+ *
+ * @return uint8_t
+ */
+uint8_t Sixty502::ROR() {
+	return 0;
+}
+
+/**
+ * @brief NOP - No Operation
+ *
+ * @return uint8_t
+ */
+uint8_t NOP() {
+	return 0;
 }

@@ -5,6 +5,9 @@
 #include <vector>
 #include <string>
 
+#define NMI_LOW 0xFFFE
+#define NMI_HIGH 0xFFFF
+
 class Bus;
 
 class Sixty502 {
@@ -40,6 +43,7 @@ public:
 	uint8_t get_flag(FLAGS6502 flag);
 	uint8_t fetch();
 	bool check_page_crossing(uint16_t address, uint16_t off);
+	void update_z_and_n_flag(uint8_t check);
 
 	//Address modes
 	uint8_t MODE_ACC();
@@ -60,14 +64,22 @@ public:
 	uint8_t ILL();
 
 	//Instructions
-	uint8_t BRK();	uint8_t ORA();
-	uint8_t BPL();
+	uint8_t BRK(); uint8_t ORA();
+	uint8_t BPL(); uint8_t AND();
+	uint8_t LDA(); uint8_t STX();
+	uint8_t STA(); uint8_t STY();
+	uint8_t TAX(); uint8_t TXA();
+	uint8_t DEX(); uint8_t INX();
+	uint8_t TAY(); uint8_t TYA();
+	uint8_t DEY(); uint8_t INY();
+	uint8_t ROL(); uint8_t ROR();
+	uint8_t NOP();
 
 	struct Instruction {
 		std::string name;
 
-		uint8_t(Sixty502::*address_mode)(void) = nullptr;
-		uint8_t(Sixty502::*opcode)(void) = nullptr;
+		uint8_t(Sixty502::* address_mode)(void) = nullptr;
+		uint8_t(Sixty502::* opcode)(void) = nullptr;
 
 		uint8_t cycles = 0;
 	};
